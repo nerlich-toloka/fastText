@@ -53,7 +53,8 @@ class _Meter:
         else:
             precision, recall = ([], ())
 
-        return np.array(precision, copy=False), np.array(recall, copy=False)
+        # return np.array(precision, copy=False), np.array(recall, copy=False)
+        return np.asarray(precision), np.asarray(recall)
 
     def precision_at_recall(self, recall, label=None):
         """Return precision for a given recall"""
@@ -236,7 +237,8 @@ class _FastText:
             else:
                 probs, labels = ([], ())
 
-            return labels, np.array(probs, copy=False)
+            # return labels, np.array(probs, copy=False)
+            return labels, np.asarray(probs)
 
     def get_input_matrix(self):
         """
